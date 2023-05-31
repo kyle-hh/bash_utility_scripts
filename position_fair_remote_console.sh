@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 
-# Position a window at the start of the 3rd monitor from top to bottom
-# and left to right over into the 4th monitor.
-#
+# Position a window at the start (Top Left) of the chosen monitor
+# and extend the window from top to bottom of the screen and from
+# left to right over the next screen positioned on the right side.
+
 # Setup for 4 monitor config from left to right.
 # 1 - 1680x1050
 # 2 - 1280x1024
