@@ -11,27 +11,13 @@
 # 4 - 1280x1024
 
 # All monitor details from left to right with tops of monitors aligned.
-# Monitor 1
-#MON_1_WIDTH=1680
-#MON_1_HEIGHT=1050
-MON_1_WIDTH=1280
-MON_1_HEIGHT=1024
-# Monitor 2
-MON_2_WIDTH=1280
-MON_2_HEIGHT=1024
-# Monitor 3
-MON_3_WIDTH=1280
-MON_3_HEIGHT=1024
-# Monitor 4
-MON_4_WIDTH=1280
-MON_4_HEIGHT=1024
-
-# Array for height and width layouts
+# Array for width and height layouts
 # (Monitor_1 Monitor_2 Monitor_3 ... )
-MONITOR_HEIGHTS=(1024 1024 1024)
 MONITOR_WIDTHS=(1280 1280 1280)
+MONITOR_HEIGHTS=(1024 1024 1024)
 
-# Assumed to cross only 2 monitors
+# Assumed the window will cross only 2 monitors.
+# The starting monitor plus the one to the right.
 START_MONITOR=2
 END_MONITOR=$(( $START_MON + 1 ))
 
