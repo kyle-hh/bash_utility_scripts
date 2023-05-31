@@ -26,21 +26,24 @@ MON_3_HEIGHT=1024
 MON_4_WIDTH=1280
 MON_4_HEIGHT=1024
 
+# Array for height and width layouts
+# (Monitor_1 Monitor_2 Monitor_3 ... )
+MONITOR_HEIGHTS=(1024 1024 1024)
+MONITOR_WIDTHS=(1280 1280 1280)
 
-MON_HEIGHTS=(1024 1024 1024)
-MON_WIDTHS=(1280 1280 1280)
+# Assumed to cross only 2 monitors
+START_MONITOR=2
+END_MONITOR=$(( $START_MON + 1 ))
 
-START_MON=2
-END_MON=3
 # Window Top Border spacing in pixels
 WINDOW_TOP_BORDER=38
 WINDOW_TITLE_SEARCH_PATTERN=fair  # Word in windows total. Assume only one matching result.
 
 # Calculate the required width and height plus the x,y top left corner offset.
-WINDOW_WIDTH=$(( $MON_2_WIDTH + $MON_3_WIDTH ))  # Horizontal, left to right size.
+WINDOW_WIDTH=$(( ${MONITOR_WIDTHS[$START_MONITOR - 1]} + ${MONITOR_WIDTHS[$END_MONITOR - 1]} ))  # Horizontal, left to right size.
 #WINDOW_WIDTH=1920  # Horizontal, left to right size.
-WINDOW_HEIGHT=$(( $MON_2_HEIGHT - $WINDOW_TOP_BORDER ))  # Vertical, top to bottom size. (Reserve space for window border)
-WINDOW_TOP_LEFT_X=$(( $MON_1_WIDTH ))  # How far in from the left.
+WINDOW_HEIGHT=$(( ${MONITOR_HEIGHTS[$START_MONITOR - 1]} - $WINDOW_TOP_BORDER ))  # Vertical, top to bottom size. (Reserve space for window border)
+WINDOW_TOP_LEFT_X=$(( ${MONITOR_WIDTHS[$START_MONITOR - 1]} ))  # How far in from the left.
 WINDOW_TOP_LEFT_Y=0  # How far down from the top.
 
 echo "Window Width: $WINDOW_WIDTH"
