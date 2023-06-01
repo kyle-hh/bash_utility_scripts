@@ -20,7 +20,7 @@ MONITOR_HEIGHTS=(1024 1024 1024)
 # Assumed the window will cross only 2 monitors.
 # The starting monitor plus the one to the right.
 START_MONITOR=2
-END_MONITOR=$(( $START_MON + 1 ))
+END_MONITOR=$(( $START_MONITOR + 1 ))
 
 # Window Top Border spacing in pixels
 WINDOW_TOP_BORDER=38
@@ -37,7 +37,7 @@ echo "Window Width: $WINDOW_WIDTH"
 echo "Window Height: $WINDOW_HEIGHT"
 echo "Window Top Left X: $WINDOW_TOP_LEFT_X"
 echo "Window Top Left Y: $WINDOW_TOP_LEFT_Y"
-# Chain together xdotool commands to find window ID, set window size and position window on screen.
+# Chain together xdotool commands to find window ID, set window size and then position window on screen.
 WINDOW_POSITIONING_COMMAND="xdotool search --name $WINDOW_TITLE_SEARCH_PATTERN windowsize $WINDOW_WIDTH $WINDOW_HEIGHT windowmove $WINDOW_TOP_LEFT_X $WINDOW_TOP_LEFT_Y"
 echo "Running Command: $WINDOW_POSITIONING_COMMAND"
 eval $WINDOW_POSITIONING_COMMAND
